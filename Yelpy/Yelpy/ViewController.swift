@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         getAPIData()
     }
     
+    var ratingMap = [0.0: "regular_0", 1.0:"regular_1",1.5:"regular_1_half", 2.0 : "regular_2", 2.5: "regular_2_half", 3.0: "regular_3",3.5:"regular_3_half", 4.0:"regular_4", 4.5 :"regular_4_half", 5.0:"regular_5"]
+    
     func getAPIData() {
         API.getRestaurants { restaurants in
             guard let restaurants = restaurants else {
@@ -79,6 +81,10 @@ extension ViewController: UITableViewDataSource {
         let cell = tableview.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier, for: indexPath) as! RestaurantTableViewCell
         
         let restaurant = restaurantsArray[indexPath.row]
+        
+        // TODO: clean up
+        
+        // editing cell
         if let imageUrlString = restaurant["image_url"] as? String {
             // 2.
             let imageUrl = URL(string: imageUrlString)!
@@ -92,6 +98,21 @@ extension ViewController: UITableViewDataSource {
         }
         
         cell.title.text = restaurant["name"] as? String ?? ""
+        cell.phoneNumberLbl.text = restaurant["display_phone"] as? String ?? ""
+        let reviewCount = restaurant["review_count"] as? Int
+        
+        cell.rating.text = String(reviewCount!)
+        
+        let imgName2 = restaurant["rating"] as? Double ?? nil
+        if let imgName2 = imgName2 {
+    
+            cell.stars.image = UIImage(named: ratingMap[imgName2]!)
+            
+        }
+            
+
+        
+      
         
         
         return cell

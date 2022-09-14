@@ -120,7 +120,8 @@ class RestaurantTableViewCell: UITableViewCell {
        
        NSLayoutConstraint.activate([
         rating.centerYAnchor.constraint(equalTo: stars.centerYAnchor),
-        rating.leadingAnchor.constraint(equalTo: stars.trailingAnchor, constant: 10)
+        rating.leadingAnchor.constraint(equalTo: stars.trailingAnchor, constant: 10),
+        rating.trailingAnchor.constraint(equalTo: imageview.leadingAnchor, constant: -10)
        ])
        
        NSLayoutConstraint.activate([
