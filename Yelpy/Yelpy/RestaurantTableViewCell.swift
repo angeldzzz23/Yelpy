@@ -53,7 +53,7 @@ class RestaurantTableViewCell: UITableViewCell {
         return imgview
     }()
     
-    let rating: UILabel = {
+    let reviewCount: UILabel = {
         let lbl = UILabel()
         lbl.text = "425"
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
@@ -79,7 +79,7 @@ class RestaurantTableViewCell: UITableViewCell {
        contentView.addSubview(title)
        contentView.addSubview(typeLbl)
        contentView.addSubview(stars)
-       contentView.addSubview(rating)
+       contentView.addSubview(reviewCount)
        contentView.addSubview(phoneNumberLbl)
        
        
@@ -119,13 +119,13 @@ class RestaurantTableViewCell: UITableViewCell {
        stars.widthAnchor.constraint(equalToConstant: width).isActive = true
        
        NSLayoutConstraint.activate([
-        rating.centerYAnchor.constraint(equalTo: stars.centerYAnchor),
-        rating.leadingAnchor.constraint(equalTo: stars.trailingAnchor, constant: 10),
-        rating.trailingAnchor.constraint(equalTo: imageview.leadingAnchor, constant: -10)
+        reviewCount.centerYAnchor.constraint(equalTo: stars.centerYAnchor),
+        reviewCount.leadingAnchor.constraint(equalTo: stars.trailingAnchor, constant: 10),
+        reviewCount.trailingAnchor.constraint(equalTo: imageview.leadingAnchor, constant: -10)
        ])
        
        NSLayoutConstraint.activate([
-        phoneNumberLbl.topAnchor.constraint(equalTo: rating.bottomAnchor, constant: 10),
+        phoneNumberLbl.topAnchor.constraint(equalTo: reviewCount.bottomAnchor, constant: 10),
         phoneNumberLbl.leadingAnchor.constraint(equalTo: stars.leadingAnchor)
         
        ])
