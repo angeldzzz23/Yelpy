@@ -18,6 +18,7 @@
 		1C37CAEA28D164280002FD8C /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CAE928D164270002FD8C /* RestaurantTableViewCell.swift */; };
 		1C37CAEC28D173E60002FD8C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CAEB28D173E60002FD8C /* Network.swift */; };
 		1C9C829928D20D530073DE0B /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C829828D20D530073DE0B /* Businesses.swift */; };
+		1C9C829B28D248920073DE0B /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C829A28D248920073DE0B /* RestaurantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1C37CAE928D164270002FD8C /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		1C37CAEB28D173E60002FD8C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1C9C829828D20D530073DE0B /* Businesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
+		1C9C829A28D248920073DE0B /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1C37CAB928D15E520002FD8C /* AppDelegate.swift */,
 				1C37CABB28D15E520002FD8C /* SceneDelegate.swift */,
 				1C37CABD28D15E520002FD8C /* ViewController.swift */,
+				1C9C829A28D248920073DE0B /* RestaurantViewController.swift */,
 				1C37CAE928D164270002FD8C /* RestaurantTableViewCell.swift */,
 				1C37CAEB28D173E60002FD8C /* Network.swift */,
 				1C9C829828D20D530073DE0B /* Businesses.swift */,
@@ -265,6 +268,7 @@
 			files = (
 				1C37CAEC28D173E60002FD8C /* Network.swift in Sources */,
 				1C37CAEA28D164280002FD8C /* RestaurantTableViewCell.swift in Sources */,
+				1C9C829B28D248920073DE0B /* RestaurantViewController.swift in Sources */,
 				1C37CABE28D15E520002FD8C /* ViewController.swift in Sources */,
 				1C37CABA28D15E520002FD8C /* AppDelegate.swift in Sources */,
 				1C37CABC28D15E520002FD8C /* SceneDelegate.swift in Sources */,
