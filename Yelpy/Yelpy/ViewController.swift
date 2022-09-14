@@ -160,8 +160,6 @@ extension ViewController: UITableViewDataSource {
 
         cell.typeLbl.text = strCategories
 
-
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -129,6 +129,7 @@ class RestaurantTableViewCell: UITableViewCell {
         phoneNumberLbl.leadingAnchor.constraint(equalTo: stars.leadingAnchor)
         
        ])
+     
        
        
     }

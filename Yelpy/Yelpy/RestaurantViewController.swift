@@ -15,6 +15,7 @@ class RestaurantViewController: UIViewController {
     init(business: Business) {
         super.init(nibName: nil, bundle: nil)
         
+        // updating view 
         if let url = business.imageURL as String? {
             let imageUrl = URL(string: url)!
             API.fetchImage(url: imageUrl) { image in
@@ -24,6 +25,8 @@ class RestaurantViewController: UIViewController {
 
             }
         }
+        
+        
     }
     
     init() {
@@ -47,7 +50,7 @@ class RestaurantViewController: UIViewController {
         let lbl = UILabel()
         lbl.textColor = .white
         lbl.text = "New York Pizza Kitchen"
-        lbl.font = UIFont.systemFont(ofSize: 32, weight: .medium)
+        lbl.font = UIFont.systemFont(ofSize: 40, weight: .medium)
         lbl.numberOfLines = 2
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -57,6 +60,8 @@ class RestaurantViewController: UIViewController {
     var starViewImg: UIImageView =  {
        let imgView = UIImageView()
         imgView.image = UIImage(named: "regular_5")
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFill
         return imgView
     }()
     
@@ -95,8 +100,15 @@ class RestaurantViewController: UIViewController {
         ])
         
         
-        // adding 
+        // adding
+        let height: CGFloat = view.frame.width/3
+
+        NSLayoutConstraint.activate([
+            starViewImg.topAnchor.constraint(equalTo: titleLbl.bottomAnchor, constant: 10),
+            starViewImg.leadingAnchor.constraint(equalTo: titleLbl.leadingAnchor),
+            starViewImg.widthAnchor.constraint(equalToConstant: height)
         
+        ])
         
     }
     
