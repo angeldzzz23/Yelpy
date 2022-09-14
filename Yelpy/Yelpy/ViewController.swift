@@ -15,7 +15,6 @@ class ViewController: UIViewController {
         let tb = UITableView()
         tb.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tb.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
-        tb.backgroundColor = .red
         return tb
     }()
     
@@ -29,7 +28,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUpViews()
         setUpAutoLayout()
-        
         getAPIData()
         
         getData()
@@ -37,7 +35,7 @@ class ViewController: UIViewController {
     }
     
     // converts the rating
-    var ratingMap = [0.0: "regular_0", 1.0:"regular_1",1.5:"regular_1_half", 2.0 : "regular_2", 2.5: "regular_2_half", 3.0: "regular_3",3.5:"regular_3_half", 4.0:"regular_4", 4.5 :"regular_4_half", 5.0:"regular_5"]
+    let ratingMap = [0.0: "regular_0", 1.0:"regular_1",1.5:"regular_1_half", 2.0 : "regular_2", 2.5: "regular_2_half", 3.0: "regular_3",3.5:"regular_3_half", 4.0:"regular_4", 4.5 :"regular_4_half", 5.0:"regular_5"]
     
     func getData() {
         API.fetchBusinesses { result in
@@ -142,7 +140,6 @@ extension ViewController: UITableViewDataSource {
         
         
         // TODO: Refactor this more
-        print(categories)
         
         // appending string into
         for (i, cat) in categories.enumerated() {
