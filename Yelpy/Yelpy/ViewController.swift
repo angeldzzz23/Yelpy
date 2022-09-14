@@ -37,7 +37,8 @@ class ViewController: UIViewController {
                 return
             }
             print(restaurants)
-            self.restaurantsArray = restaurants
+                self.restaurantsArray = restaurants
+                self.tableview.reloadData()
             
         }
     }
@@ -71,11 +72,28 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return restaurantsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier, for: indexPath) as! RestaurantTableViewCell
+        
+        let restaurant = restaurantsArray[indexPath.row]
+        if let imageUrlString = restaurant["image_url"] as? String {
+            // 2.
+            let imageUrl = URL(string: imageUrlString)!
+            // 3.
+            API.fetchImage(url: imageUrl) { img in
+                
+                DispatchQueue.main.async {
+                cell.imageview.image  = img
+                }
+            }
+        }
+        
+        cell.title.text = restaurant["name"] as? String ?? ""
+        
+        
         return cell
     }
 }

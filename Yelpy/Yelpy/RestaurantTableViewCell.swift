@@ -18,7 +18,7 @@ class RestaurantTableViewCell: UITableViewCell {
         return imgview
     }()
     
-    let title: UILabel = {
+    var title: UILabel = {
         let lbl = UILabel()
         lbl.text = "Mythic Pizza"
         lbl.font = UIFont.systemFont(ofSize: 22, weight: .bold)
