@@ -141,8 +141,9 @@ extension ViewController: UITableViewDataSource {
         var strCategories = ""
         
         
-        // TODO: Refactor this more 
+        // TODO: Refactor this more
         print(categories)
+        
         // appending string into
         for (i, cat) in categories.enumerated() {
             if i == 0 && categories.count == 1 {
@@ -152,8 +153,6 @@ extension ViewController: UITableViewDataSource {
             } else if i == categories.count - 1 {
                 strCategories += cat.title
             }
-            
-                
         }
         
         cell.typeLbl.text = strCategories
@@ -165,47 +164,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier, for: indexPath) as! RestaurantTableViewCell
         
-        
-        
-//        let restaurant = restaurantsArray[indexPath.row]
-//
-//
-//
-//        // TODO: clean up
-//
-//        // editing cell
-//        if let imageUrlString = restaurant["image_url"] as? String {
-//            // 2.
-//            let imageUrl = URL(string: imageUrlString)!
-//            // 3.
-//            API.fetchImage(url: imageUrl) { img in
-//
-//                DispatchQueue.main.async {
-//                cell.imageview.image  = img
-//                }
-//            }
-//        }
-//
-//        cell.title.text = restaurant["name"] as? String ?? ""
-//        cell.phoneNumberLbl.text = restaurant["display_phone"] as? String ?? ""
-//        let reviewCount = restaurant["review_count"] as? Int
-//
-//        cell.rating.text = String(reviewCount!)
-//
-//        let imgName2 = restaurant["rating"] as? Double ?? nil
-//        if let imgName2 = imgName2 {
-//
-//            cell.stars.image = UIImage(named: ratingMap[imgName2]!)
-//
-//        }
-        
         configure(cell, forItemAt: indexPath)
             
 
-        
-      
-        
-        
         return cell
     }
 }
