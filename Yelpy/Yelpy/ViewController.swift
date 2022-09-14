@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         setUpAutoLayout()
         
         getAPIData()
+        
+        
     }
     
     var ratingMap = [0.0: "regular_0", 1.0:"regular_1",1.5:"regular_1_half", 2.0 : "regular_2", 2.5: "regular_2_half", 3.0: "regular_3",3.5:"regular_3_half", 4.0:"regular_4", 4.5 :"regular_4_half", 5.0:"regular_5"]
@@ -38,7 +40,7 @@ class ViewController: UIViewController {
             guard let restaurants = restaurants else {
                 return
             }
-            print(restaurants)
+            
                 self.restaurantsArray = restaurants
                 self.tableview.reloadData()
             

@@ -62,6 +62,74 @@ struct API {
             task.resume()
         
         }
+    
+   
+    
+    /// Gets the movies from the url
+     static func fetchBusinesses(completion: @escaping (Swift.Result<[Business], Error>) -> Void)
+      {
+          
+          
+          
+          let apikey = "CPQxOZEqj6LG71HZ_kHdUGIi8XzOd4h4elti8P5fp677vsUqbulXAqZor_w44CdnsLR4cZ_9XM3QVSZThDb8aEAYPGS9EQji6XFak8Jc3hO8E_JRMyKy_N9AETwhY3Yx"
+
+          let lat = 37.773972
+          let long = -122.431297
+
+          let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?latitude=\(lat)&longitude=\(long)")!
+          
+          var request = URLRequest(url: url)
+          request.httpMethod = "GET"
+          request.addValue("Bearer \(apikey)", forHTTPHeaderField: "Authorization")
+          
+          
+          URLSession.shared.dataTask(with: request) { data, response, err in
+              print("bahaha")
+              guard err == nil else {
+                  print("error: ", err!)
+                  return
+              }
+              
+          
+              
+              guard  let response = response as? HTTPURLResponse else {
+                      print("no response")
+                  return
+              }
+            
+              
+              guard response.statusCode == 200 else {
+                  print("BAD RESPONSE: ", response.statusCode)
+                  return
+              }
+              
+              guard let data = data else {
+                  print("no data ")
+                  return
+              }
+              
+              
+              do {
+                  let decoder = JSONDecoder()
+               
+                  let response = try decoder.decode(Response.self, from: data)
+                  
+
+                  completion(.success(response.businesses))
+                  
+              }
+              catch {
+                  completion(.failure(error))
+              }
+            
+          }.resume()
+
+
+      }
+    
+    
     }
+
+
 
     
