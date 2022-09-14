@@ -72,6 +72,12 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+        navigationController?.present( RestaurantViewController(), animated: true)
+
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -111,11 +117,6 @@ extension ViewController: UITableViewDataSource {
             cell.stars.image = UIImage(named: ratingMap[imgName2]!)
             
         }
-            
-
-        
-      
-        
         
         return cell
     }
