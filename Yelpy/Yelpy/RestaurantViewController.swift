@@ -15,7 +15,7 @@ class RestaurantViewController: UIViewController {
     init(business: Business) {
         super.init(nibName: nil, bundle: nil)
         
-        // updating view 
+        // updating view
         if let url = business.imageURL as String? {
             let imageUrl = URL(string: url)!
             API.fetchImage(url: imageUrl) { image in
@@ -65,6 +65,16 @@ class RestaurantViewController: UIViewController {
         return imgView
     }()
     
+    let reviewCount: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "425"
+        lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textColor = .white
+        return lbl
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,8 +89,8 @@ class RestaurantViewController: UIViewController {
         view.addSubview(restImage)
         restImage.addSubview(titleLbl)
         restImage.addSubview(starViewImg)
-        
-//        .addSubview(titleLbl)
+        restImage.addSubview(reviewCount)
+
     }
     
     func setConstraints() {
@@ -100,7 +110,7 @@ class RestaurantViewController: UIViewController {
         ])
         
         
-        // adding
+        // adding star img constraints
         let height: CGFloat = view.frame.width/3
 
         NSLayoutConstraint.activate([
@@ -109,6 +119,12 @@ class RestaurantViewController: UIViewController {
             starViewImg.widthAnchor.constraint(equalToConstant: height)
         
         ])
+        
+        NSLayoutConstraint.activate([
+            reviewCount.leadingAnchor.constraint(equalTo: starViewImg.trailingAnchor, constant: 10),
+            reviewCount.centerYAnchor.constraint(equalTo: starViewImg.centerYAnchor)
+        ])
+
         
     }
     
