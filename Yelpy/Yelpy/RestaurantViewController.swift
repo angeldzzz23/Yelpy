@@ -8,7 +8,32 @@
 import UIKit
 
 class RestaurantViewController: UIViewController {
+    
     // MARK: properties
+    
+    
+    init(business: Business) {
+        super.init(nibName: nil, bundle: nil)
+        
+        if let url = business.imageURL as String? {
+            let imageUrl = URL(string: url)!
+            API.fetchImage(url: imageUrl) { image in
+                DispatchQueue.main.async {
+                    self.restImage.image = image
+                }
+
+            }
+        }
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     /// restaurant image
     let restImage: UIImageView = {
@@ -20,12 +45,19 @@ class RestaurantViewController: UIViewController {
     
     var titleLbl: UILabel = {
         let lbl = UILabel()
-        lbl.backgroundColor = .green
+        lbl.textColor = .white
         lbl.text = "New York Pizza Kitchen"
-        lbl.font = UIFont.systemFont(ofSize: 32, weight: .regular)
+        lbl.font = UIFont.systemFont(ofSize: 32, weight: .medium)
         lbl.numberOfLines = 2
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
+    }()
+    
+    
+    var starViewImg: UIImageView =  {
+       let imgView = UIImageView()
+        imgView.image = UIImage(named: "regular_5")
+        return imgView
     }()
     
     override func viewDidLoad() {
@@ -41,6 +73,8 @@ class RestaurantViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(restImage)
         restImage.addSubview(titleLbl)
+        restImage.addSubview(starViewImg)
+        
 //        .addSubview(titleLbl)
     }
     
@@ -56,10 +90,14 @@ class RestaurantViewController: UIViewController {
         // TODO:
         NSLayoutConstraint.activate([
             titleLbl.leadingAnchor.constraint(equalTo: restImage.leadingAnchor, constant: 10),
-            titleLbl.centerYAnchor.constraint(equalTo: restImage.centerYAnchor),
-            titleLbl.trailingAnchor.constraint(equalTo: restImage.trailingAnchor, constant: -view.frame.width/2)
+            titleLbl.centerYAnchor.constraint(equalTo: restImage.centerYAnchor, constant: 20),
+            titleLbl.trailingAnchor.constraint(equalTo: restImage.trailingAnchor, constant: -10)
         ])
-        // adding the title
+        
+        
+        // adding 
+        
+        
     }
     
 

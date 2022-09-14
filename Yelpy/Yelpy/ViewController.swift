@@ -104,7 +104,7 @@ extension ViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        navigationController?.present( RestaurantViewController(), animated: true)
+        navigationController?.present( RestaurantViewController(business: businessArray[indexPath.row]), animated: true)
 
     }
 }
