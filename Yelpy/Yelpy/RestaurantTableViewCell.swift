@@ -36,6 +36,14 @@ class RestaurantTableViewCell: UITableViewCell {
         return lbl
     }()
     
+    let stars: UIImageView = {
+        let imgview = UIImageView()
+        imgview.image = UIImage(named: "regular_0")
+        imgview.contentMode = .scaleToFill
+        imgview.translatesAutoresizingMaskIntoConstraints = false
+        return imgview
+    }()
+    
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -53,6 +61,7 @@ class RestaurantTableViewCell: UITableViewCell {
         contentView.addSubview(imageview)
        contentView.addSubview(title)
        contentView.addSubview(typeLbl)
+       contentView.addSubview(stars)
        
     }
 
@@ -80,6 +89,17 @@ class RestaurantTableViewCell: UITableViewCell {
         typeLbl.leadingAnchor.constraint(equalTo: title.leadingAnchor),
         typeLbl.trailingAnchor.constraint(equalTo: title.trailingAnchor)
        ])
+//
+       NSLayoutConstraint.activate([
+        stars.topAnchor.constraint(equalTo: typeLbl.bottomAnchor, constant: 10),
+        stars.leadingAnchor.constraint(equalTo: typeLbl.leadingAnchor),
+        
+       ])
+       let width: CGFloat = contentView.frame.width/3
+       stars.widthAnchor.constraint(equalToConstant: width).isActive = true
+       
+       
+       
     }
     
     required init?(coder: NSCoder) {
