@@ -141,14 +141,22 @@ extension ViewController: UITableViewDataSource {
         var strCategories = ""
         
         
-        // TODO:
+        // TODO: Refactor this more 
         print(categories)
         // appending string into
         for (i, cat) in categories.enumerated() {
-
+            if i == 0 && categories.count == 1 {
+                strCategories += cat.title
+            } else if i == 0 {
+                strCategories += cat.title + ", "
+            } else if i == categories.count - 1 {
+                strCategories += cat.title
+            }
+            
                 
         }
         
+        cell.typeLbl.text = strCategories
         
         
         
