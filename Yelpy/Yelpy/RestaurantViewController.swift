@@ -14,6 +14,8 @@ class RestaurantViewController: UIViewController {
     // converts the rating
     let ratingMap = [0.0: "regular_0", 1.0:"regular_1",1.5:"regular_1_half", 2.0 : "regular_2", 2.5: "regular_2_half", 3.0: "regular_3",3.5:"regular_3_half", 4.0:"regular_4", 4.5 :"regular_4_half", 5.0:"regular_5"]
     
+    let gradientLayer = CAGradientLayer()
+    
     // MARK: initializers
     init(business: Business) {
         super.init(nibName: nil, bundle: nil)
@@ -44,8 +46,23 @@ class RestaurantViewController: UIViewController {
         
         // updating the starcount
         
+    }
+    
+    fileprivate func setUpGradientLayer() {
+        
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.5,1.1] // What does this do?
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: 300, height: 400)
+        restImage.layer.addSublayer(gradientLayer)
         
     }
+    
+    override func viewDidLayoutSubviews() {
+    
+            gradientLayer.frame = restImage.frame
+        
+    }
+    
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -99,17 +116,18 @@ class RestaurantViewController: UIViewController {
         view.backgroundColor = .white
         addSubviews()
         setConstraints()
+        setUpGradientLayer()
         // Do any additional setup after loading the view.
     }
     
     
     private func addSubviews() {
         view.addSubview(restImage)
-        restImage.addSubview(titleLbl)
-        restImage.addSubview(starViewImg)
-        restImage.addSubview(reviewCount)
-
+        view.addSubview(titleLbl)
+        view.addSubview(starViewImg)
+        view.addSubview(reviewCount)
     }
+    
     
     func setConstraints() {
         NSLayoutConstraint.activate([
