@@ -132,6 +132,8 @@ extension ViewController: UITableViewDataSource {
        }
 
         cell.reviewCount.text = String(business.rating)
+        
+        
         let imgName2 = business.rating as? Double ?? nil
 
 
