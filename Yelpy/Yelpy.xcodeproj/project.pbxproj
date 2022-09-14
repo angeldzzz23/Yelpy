@@ -16,6 +16,7 @@
 		1C37CADB28D15E520002FD8C /* YelpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CADA28D15E520002FD8C /* YelpyUITests.swift */; };
 		1C37CADD28D15E520002FD8C /* YelpyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CADC28D15E520002FD8C /* YelpyUITestsLaunchTests.swift */; };
 		1C37CAEA28D164280002FD8C /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CAE928D164270002FD8C /* RestaurantTableViewCell.swift */; };
+		1C37CAEC28D173E60002FD8C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CAEB28D173E60002FD8C /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1C37CADA28D15E520002FD8C /* YelpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpyUITests.swift; sourceTree = "<group>"; };
 		1C37CADC28D15E520002FD8C /* YelpyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1C37CAE928D164270002FD8C /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		1C37CAEB28D173E60002FD8C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				1C37CABB28D15E520002FD8C /* SceneDelegate.swift */,
 				1C37CABD28D15E520002FD8C /* ViewController.swift */,
 				1C37CAE928D164270002FD8C /* RestaurantTableViewCell.swift */,
+				1C37CAEB28D173E60002FD8C /* Network.swift */,
 				1C37CAC228D15E520002FD8C /* Assets.xcassets */,
 				1C37CAC428D15E520002FD8C /* LaunchScreen.storyboard */,
 				1C37CAC728D15E520002FD8C /* Info.plist */,
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C37CAEC28D173E60002FD8C /* Network.swift in Sources */,
 				1C37CAEA28D164280002FD8C /* RestaurantTableViewCell.swift in Sources */,
 				1C37CABE28D15E520002FD8C /* ViewController.swift in Sources */,
 				1C37CABA28D15E520002FD8C /* AppDelegate.swift in Sources */,

@@ -30,7 +30,16 @@ class RestaurantTableViewCell: UITableViewCell {
     let typeLbl: UILabel = {
         let lbl = UILabel()
         lbl.text = "Pizza"
-        lbl.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        lbl.numberOfLines = 1
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    let phoneNumberLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "(916) 642-0258"
+        lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lbl.numberOfLines = 1
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -44,7 +53,15 @@ class RestaurantTableViewCell: UITableViewCell {
         return imgview
     }()
     
-
+    let rating: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "425"
+        lbl.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textColor = .systemGray2
+        return lbl
+    }()
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -58,10 +75,13 @@ class RestaurantTableViewCell: UITableViewCell {
     
    private func setUpLayout() {
         
-        contentView.addSubview(imageview)
+       contentView.addSubview(imageview)
        contentView.addSubview(title)
        contentView.addSubview(typeLbl)
        contentView.addSubview(stars)
+       contentView.addSubview(rating)
+       contentView.addSubview(phoneNumberLbl)
+       
        
     }
 
@@ -98,6 +118,16 @@ class RestaurantTableViewCell: UITableViewCell {
        let width: CGFloat = contentView.frame.width/3
        stars.widthAnchor.constraint(equalToConstant: width).isActive = true
        
+       NSLayoutConstraint.activate([
+        rating.centerYAnchor.constraint(equalTo: stars.centerYAnchor),
+        rating.leadingAnchor.constraint(equalTo: stars.trailingAnchor, constant: 10)
+       ])
+       
+       NSLayoutConstraint.activate([
+        phoneNumberLbl.topAnchor.constraint(equalTo: rating.bottomAnchor, constant: 10),
+        phoneNumberLbl.leadingAnchor.constraint(equalTo: stars.leadingAnchor)
+        
+       ])
        
        
     }

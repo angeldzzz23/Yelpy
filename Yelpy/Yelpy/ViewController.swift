@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         tb.backgroundColor = .red
         return tb
     }()
+    
+    var restaurantsArray: [[String: Any?]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUpViews()
         setUpAutoLayout()
+        
+        getAPIData()
+    }
+    
+    func getAPIData() {
+        API.getRestaurants { restaurants in
+            guard let restaurants = restaurants else {
+                return
+            }
+            print(restaurants)
+            self.restaurantsArray = restaurants
+            
+        }
     }
     
     func setUpViews(){
