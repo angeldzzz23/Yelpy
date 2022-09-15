@@ -31,8 +31,8 @@ struct API {
         let apikey = "CPQxOZEqj6LG71HZ_kHdUGIi8XzOd4h4elti8P5fp677vsUqbulXAqZor_w44CdnsLR4cZ_9XM3QVSZThDb8aEAYPGS9EQji6XFak8Jc3hO8E_JRMyKy_N9AETwhY3Yx"
         
         // Coordinates for San Francisco
-        let lat = 37.773972
-        let long = -122.431297
+        let lat = 38.626965241198434
+        let long = -121.50944216708213
         
                 
         let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?latitude=\(lat)&longitude=\(long)")!
@@ -63,6 +63,71 @@ struct API {
         
         }
     
+    
+   static func search(str: String,completion: @escaping (Swift.Result<[Business], Error>) -> Void) {
+        // ––––– TODO: Add your own API key!
+        let apikey = "CPQxOZEqj6LG71HZ_kHdUGIi8XzOd4h4elti8P5fp677vsUqbulXAqZor_w44CdnsLR4cZ_9XM3QVSZThDb8aEAYPGS9EQji6XFak8Jc3hO8E_JRMyKy_N9AETwhY3Yx"
+        
+       // 38.626965241198434,
+       
+        // Coordinates for San Francisco
+       let lat = 38.626965241198434
+       let long = -121.50944216708213
+       
+    
+        
+       let formattedString = str.replacingOccurrences(of: " ", with: "")
+        let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?latitude=\(lat)&longitude=\(long)&term=\(formattedString)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(apikey)", forHTTPHeaderField: "Authorization")
+        
+      
+        URLSession.shared.dataTask(with: request) { data, response, err in
+            
+            guard err == nil else {
+                print("error: ", err!)
+                return
+            }
+            
+        
+            
+            guard  let response = response as? HTTPURLResponse else {
+                    print("no response")
+                return
+            }
+          
+            
+            guard response.statusCode == 200 else {
+                print("BAD RESPONSE: ", response.statusCode)
+                return
+            }
+            
+            guard let data = data else {
+                print("no data ")
+                return
+            }
+            
+            
+            do {
+                let decoder = JSONDecoder()
+             
+                let response = try decoder.decode(Response.self, from: data)
+                
+                completion(.success(response.businesses))
+                
+            }
+            catch {
+                completion(.failure(error))
+            }
+          
+        }.resume()
+        
+       
+    }
+    
+    
    
     
     /// Gets the movies from the url
@@ -70,11 +135,12 @@ struct API {
       {
           
           
-          
           let apikey = "CPQxOZEqj6LG71HZ_kHdUGIi8XzOd4h4elti8P5fp677vsUqbulXAqZor_w44CdnsLR4cZ_9XM3QVSZThDb8aEAYPGS9EQji6XFak8Jc3hO8E_JRMyKy_N9AETwhY3Yx"
 
-          let lat = 37.773972
-          let long = -122.431297
+          let lat = 38.626965241198434
+          let long = -121.50944216708213
+          
+          //    // 34.0671512416146, -118.17076708981308
 
           let url = URL(string: "https://api.yelp.com/v3/transactions/delivery/search?latitude=\(lat)&longitude=\(long)")!
           
@@ -84,7 +150,7 @@ struct API {
           
           
           URLSession.shared.dataTask(with: request) { data, response, err in
-              print("bahaha")
+              
               guard err == nil else {
                   print("error: ", err!)
                   return
@@ -112,9 +178,17 @@ struct API {
               do {
                   let decoder = JSONDecoder()
                
+                  let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                  
+                  let restaurants = dataDictionary["businesses"] as! [[String:Any]]
+                  print(restaurants)
+                  
+                  
+                  
+                  
                   let response = try decoder.decode(Response.self, from: data)
                   
-
+                  
                   completion(.success(response.businesses))
                   
               }

@@ -31,8 +31,8 @@ struct Business: Codable {
     let categories: [Category]
     let rating: Double
     let coordinates: Coordinates
-    let transactions: [Transaction]
-    let price: Price?
+    let transactions: [String]
+    let price: String
     let location: Location
     let phone, displayPhone: String
 
@@ -60,11 +60,9 @@ struct Coordinates: Codable {
 // MARK: - Location
 struct Location: Codable {
     let address1: String
-    let address2, address3: String?
-    let city: City
-    let zipCode: String
-    let country: Country
-    let state: State
+    let address2: String?
+    let address3, city, zipCode, country: String?
+    let state: String
     let displayAddress: [String]
 
     enum CodingKeys: String, CodingKey {
@@ -73,27 +71,4 @@ struct Location: Codable {
         case country, state
         case displayAddress = "display_address"
     }
-}
-
-enum City: String, Codable {
-    case sanFrancisco = "San Francisco"
-}
-
-enum Country: String, Codable {
-    case us = "US"
-}
-
-enum State: String, Codable {
-    case ca = "CA"
-}
-
-enum Price: String, Codable {
-    case empty = "$"
-    case price = "$$"
-}
-
-enum Transaction: String, Codable {
-    case delivery = "delivery"
-    case pickup = "pickup"
-    case restaurantReservation = "restaurant_reservation"
 }

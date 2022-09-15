@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchControllerDelegate {
 
     let tableview: UITableView = {
         let tb = UITableView()
@@ -17,20 +17,33 @@ class ViewController: UIViewController {
         tb.register(RestaurantTableViewCell.self, forCellReuseIdentifier: RestaurantTableViewCell.identifier)
         return tb
     }()
+    
+    private  let searchController = UISearchController(searchResultsController: nil)
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+
 
     var businessArray: [Business] = [Business]()
 
     var restaurantsArray: [[String: Any?]] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search restaurants"
+
+
         // Do any additional setup after loading the view.
         setUpViews()
         setUpAutoLayout()
         getAPIData()
 
         getData()
+        
 
     }
 
@@ -59,6 +72,21 @@ class ViewController: UIViewController {
             self.tableview.reloadData()
         }
     }
+    
+    private func searchUsing(str: String) {
+        API.search(str: str) { result in
+            switch result {
+            case .success(let businesses):
+                self.updateUI(with: businesses)
+                break
+
+            case .failure(let error):
+                print("there was an error", error)
+//                self.displayError(error, title: "Failed to fetch movies")
+
+            }
+        }
+    }
 
 
 
@@ -69,16 +97,19 @@ class ViewController: UIViewController {
             guard let restaurants = restaurants else {
                 return
             }
-
                 self.restaurantsArray = restaurants
+            
                 self.tableview.reloadData()
-
         }
     }
 
     func setUpViews(){
-
+        title = "YELPY"
         view.addSubview(tableview)
+        navigationItem.searchController = searchController
+        
+        searchController.delegate = self
+    
         tableview.dataSource = self
         tableview.delegate = self
         tableview.translatesAutoresizingMaskIntoConstraints = false
@@ -96,6 +127,27 @@ class ViewController: UIViewController {
 
 }
 
+
+extension ViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    
+        if isSearchBarEmpty {
+            getData()
+        } else {
+            let text = searchController.searchBar.text!
+            
+            searchUsing(str: text)
+            
+        }
+        
+              
+              
+    }
+   
+    
+}
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

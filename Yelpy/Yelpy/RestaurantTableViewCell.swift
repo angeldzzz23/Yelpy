@@ -69,7 +69,7 @@ class RestaurantTableViewCell: UITableViewCell {
         setUpLayout()
         setUpConstraints()
         
-        print(contentView.bounds.height)
+        
     }
     
     
