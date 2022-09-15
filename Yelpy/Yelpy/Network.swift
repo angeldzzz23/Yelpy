@@ -115,7 +115,6 @@ struct API {
              
                 let response = try decoder.decode(Response.self, from: data)
                 
-                print(response)
                 completion(.success(response.businesses))
                 
             }
@@ -138,8 +137,8 @@ struct API {
           
           let apikey = "CPQxOZEqj6LG71HZ_kHdUGIi8XzOd4h4elti8P5fp677vsUqbulXAqZor_w44CdnsLR4cZ_9XM3QVSZThDb8aEAYPGS9EQji6XFak8Jc3hO8E_JRMyKy_N9AETwhY3Yx"
 
-          let lat = 34.06564034
-          let long = -118.16634
+          let lat = 38.626965241198434
+          let long = -121.50944216708213
           
           //    // 34.0671512416146, -118.17076708981308
 
