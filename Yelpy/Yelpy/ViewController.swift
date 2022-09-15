@@ -81,7 +81,7 @@ class ViewController: UIViewController, UISearchControllerDelegate {
                 break
 
             case .failure(let error):
-                print("there was an error")
+                print("there was an error", error)
 //                self.displayError(error, title: "Failed to fetch movies")
 
             }
