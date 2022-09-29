@@ -114,6 +114,7 @@ class RestaurantViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
         addSubviews()
         setConstraints()
         setUpGradientLayer()
@@ -122,12 +123,15 @@ class RestaurantViewController: UIViewController {
     
     
     private func addSubviews() {
+        
         view.addSubview(restImage)
         view.addSubview(titleLbl)
         view.addSubview(starViewImg)
         view.addSubview(reviewCount)
+        reviewCount.bottomAnchor
     }
     
+        
     
     func setConstraints() {
         NSLayoutConstraint.activate([

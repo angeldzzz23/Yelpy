@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EEE50AD267DC5354E307069 /* Pods_YelpyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0854ADC28F3ACF71A6EBAD3B /* Pods_YelpyTests.framework */; };
+		1C00194D28E52EDC000B359E /* 119896-toaster.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C00194C28E52EDC000B359E /* 119896-toaster.json */; };
 		1C37CABA28D15E520002FD8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CAB928D15E520002FD8C /* AppDelegate.swift */; };
 		1C37CABC28D15E520002FD8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CABB28D15E520002FD8C /* SceneDelegate.swift */; };
 		1C37CABE28D15E520002FD8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CABD28D15E520002FD8C /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 		1C37CAEC28D173E60002FD8C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C37CAEB28D173E60002FD8C /* Network.swift */; };
 		1C9C829928D20D530073DE0B /* Businesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C829828D20D530073DE0B /* Businesses.swift */; };
 		1C9C829B28D248920073DE0B /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C829A28D248920073DE0B /* RestaurantViewController.swift */; };
+		96332D27F5A95915631AA73B /* Pods_Yelpy_YelpyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA9787802A96C8E15B02C35 /* Pods_Yelpy_YelpyUITests.framework */; };
+		E46FE2E367A8A530AFEF7FA8 /* Pods_Yelpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3FD95EBB78611C7AFD96BC /* Pods_Yelpy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0854ADC28F3ACF71A6EBAD3B /* Pods_YelpyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YelpyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C00194C28E52EDC000B359E /* 119896-toaster.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "119896-toaster.json"; sourceTree = "<group>"; };
 		1C37CAB628D15E520002FD8C /* Yelpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yelpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C37CAB928D15E520002FD8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C37CABB28D15E520002FD8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +61,14 @@
 		1C37CAEB28D173E60002FD8C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1C9C829828D20D530073DE0B /* Businesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Businesses.swift; sourceTree = "<group>"; };
 		1C9C829A28D248920073DE0B /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
+		2064B3BFD61EC58756A6F6DA /* Pods-YelpyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpyTests.debug.xcconfig"; path = "Target Support Files/Pods-YelpyTests/Pods-YelpyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		27FBD5DEE6282644B0B9FBC5 /* Pods-Yelpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yelpy.release.xcconfig"; path = "Target Support Files/Pods-Yelpy/Pods-Yelpy.release.xcconfig"; sourceTree = "<group>"; };
+		35C37F19FD950C5AB1E476B7 /* Pods-YelpyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelpyTests.release.xcconfig"; path = "Target Support Files/Pods-YelpyTests/Pods-YelpyTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E3FD95EBB78611C7AFD96BC /* Pods_Yelpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yelpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F2522C9B56942B296C43E5 /* Pods-Yelpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yelpy.debug.xcconfig"; path = "Target Support Files/Pods-Yelpy/Pods-Yelpy.debug.xcconfig"; sourceTree = "<group>"; };
+		AFA9787802A96C8E15B02C35 /* Pods_Yelpy_YelpyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yelpy_YelpyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7D23B1344F269B5891A2F51 /* Pods-Yelpy-YelpyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yelpy-YelpyUITests.release.xcconfig"; path = "Target Support Files/Pods-Yelpy-YelpyUITests/Pods-Yelpy-YelpyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D2DF5D0D9D7FEE05D8EAED00 /* Pods-Yelpy-YelpyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yelpy-YelpyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yelpy-YelpyUITests/Pods-Yelpy-YelpyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46FE2E367A8A530AFEF7FA8 /* Pods_Yelpy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EEE50AD267DC5354E307069 /* Pods_YelpyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +92,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96332D27F5A95915631AA73B /* Pods_Yelpy_YelpyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C00194B28E52ECA000B359E /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				1C00194C28E52EDC000B359E /* 119896-toaster.json */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 		1C37CAAD28D15E520002FD8C = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +114,8 @@
 				1C37CACF28D15E520002FD8C /* YelpyTests */,
 				1C37CAD928D15E520002FD8C /* YelpyUITests */,
 				1C37CAB728D15E520002FD8C /* Products */,
+				A148C44D57D821941250C518 /* Pods */,
+				AB46FA157BF4E3B37A978859 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +132,7 @@
 		1C37CAB828D15E520002FD8C /* Yelpy */ = {
 			isa = PBXGroup;
 			children = (
+				1C00194B28E52ECA000B359E /* Extras */,
 				1C37CAB928D15E520002FD8C /* AppDelegate.swift */,
 				1C37CABB28D15E520002FD8C /* SceneDelegate.swift */,
 				1C37CABD28D15E520002FD8C /* ViewController.swift */,
@@ -136,6 +164,29 @@
 			path = YelpyUITests;
 			sourceTree = "<group>";
 		};
+		A148C44D57D821941250C518 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83F2522C9B56942B296C43E5 /* Pods-Yelpy.debug.xcconfig */,
+				27FBD5DEE6282644B0B9FBC5 /* Pods-Yelpy.release.xcconfig */,
+				D2DF5D0D9D7FEE05D8EAED00 /* Pods-Yelpy-YelpyUITests.debug.xcconfig */,
+				C7D23B1344F269B5891A2F51 /* Pods-Yelpy-YelpyUITests.release.xcconfig */,
+				2064B3BFD61EC58756A6F6DA /* Pods-YelpyTests.debug.xcconfig */,
+				35C37F19FD950C5AB1E476B7 /* Pods-YelpyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB46FA157BF4E3B37A978859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E3FD95EBB78611C7AFD96BC /* Pods_Yelpy.framework */,
+				AFA9787802A96C8E15B02C35 /* Pods_Yelpy_YelpyUITests.framework */,
+				0854ADC28F3ACF71A6EBAD3B /* Pods_YelpyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C37CAE028D15E520002FD8C /* Build configuration list for PBXNativeTarget "Yelpy" */;
 			buildPhases = (
+				B5A2B96D9D706B7E2939619D /* [CP] Check Pods Manifest.lock */,
 				1C37CAB228D15E520002FD8C /* Sources */,
 				1C37CAB328D15E520002FD8C /* Frameworks */,
 				1C37CAB428D15E520002FD8C /* Resources */,
+				99CFDC5594D9EE74EDBD6409 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +213,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C37CAE328D15E520002FD8C /* Build configuration list for PBXNativeTarget "YelpyTests" */;
 			buildPhases = (
+				34E989CEF35217EDCE714C3F /* [CP] Check Pods Manifest.lock */,
 				1C37CAC828D15E520002FD8C /* Sources */,
 				1C37CAC928D15E520002FD8C /* Frameworks */,
 				1C37CACA28D15E520002FD8C /* Resources */,
@@ -178,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C37CAE628D15E520002FD8C /* Build configuration list for PBXNativeTarget "YelpyUITests" */;
 			buildPhases = (
+				DA3511D19F6D1A69F3AD6258 /* [CP] Check Pods Manifest.lock */,
 				1C37CAD228D15E520002FD8C /* Sources */,
 				1C37CAD328D15E520002FD8C /* Frameworks */,
 				1C37CAD428D15E520002FD8C /* Resources */,
+				042987EE1BDEB96224AC7E3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C37CAC628D15E520002FD8C /* LaunchScreen.storyboard in Resources */,
+				1C00194D28E52EDC000B359E /* 119896-toaster.json in Resources */,
 				1C37CAC328D15E520002FD8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +317,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		042987EE1BDEB96224AC7E3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yelpy-YelpyUITests/Pods-Yelpy-YelpyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yelpy-YelpyUITests/Pods-Yelpy-YelpyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yelpy-YelpyUITests/Pods-Yelpy-YelpyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34E989CEF35217EDCE714C3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YelpyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99CFDC5594D9EE74EDBD6409 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yelpy/Pods-Yelpy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yelpy/Pods-Yelpy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yelpy/Pods-Yelpy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5A2B96D9D706B7E2939619D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yelpy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA3511D19F6D1A69F3AD6258 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yelpy-YelpyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C37CAB228D15E520002FD8C /* Sources */ = {
@@ -436,6 +596,7 @@
 		};
 		1C37CAE128D15E520002FD8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83F2522C9B56942B296C43E5 /* Pods-Yelpy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +625,7 @@
 		};
 		1C37CAE228D15E520002FD8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27FBD5DEE6282644B0B9FBC5 /* Pods-Yelpy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +654,7 @@
 		};
 		1C37CAE428D15E520002FD8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2064B3BFD61EC58756A6F6DA /* Pods-YelpyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +675,7 @@
 		};
 		1C37CAE528D15E520002FD8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C37F19FD950C5AB1E476B7 /* Pods-YelpyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +696,7 @@
 		};
 		1C37CAE728D15E520002FD8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2DF5D0D9D7FEE05D8EAED00 /* Pods-Yelpy-YelpyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +715,7 @@
 		};
 		1C37CAE828D15E520002FD8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7D23B1344F269B5891A2F51 /* Pods-Yelpy-YelpyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

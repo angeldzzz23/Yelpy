@@ -83,6 +83,8 @@ class RestaurantTableViewCell: UITableViewCell {
        contentView.addSubview(phoneNumberLbl)
        
        
+       
+       
     }
 
     

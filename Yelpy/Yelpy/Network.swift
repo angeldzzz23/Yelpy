@@ -109,12 +109,11 @@ struct API {
                 return
             }
             
-            
             do {
                 let decoder = JSONDecoder()
-             
-                let response = try decoder.decode(Response.self, from: data)
                 
+                let response = try decoder.decode(Response.self, from: data)
+
                 completion(.success(response.businesses))
                 
             }

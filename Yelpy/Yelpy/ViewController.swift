@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lottie
 
 
 class ViewController: UIViewController, UISearchControllerDelegate {
@@ -29,28 +29,46 @@ class ViewController: UIViewController, UISearchControllerDelegate {
 
     var restaurantsArray: [[String: Any?]] = []
     
+    var animationView: AnimationView?
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search restaurants"
 
-
+        
+    
+        
         // Do any additional setup after loading the view.
         setUpViews()
         setUpAutoLayout()
-        getAPIData()
-
+        startAnimation()
         getData()
         
-
+    }
+    
+    private func startAnimation() {
+        animationView = .init(name: "119896-toaster")
+        animationView!.frame = CGRect(x: view.frame.width/3, y: 0, width: 100, height: 100)
+        animationView?.contentMode = .scaleAspectFit
+        view.addSubview(animationView!)
+        animationView?.loopMode = .loop
+        animationView?.animationSpeed = 5
+        animationView?.play()
+    }
+    
+    @objc func stopAnimation() {
+        animationView?.stop()
+        view.subviews.last?.removeFromSuperview()
     }
 
     // converts the rating
     let ratingMap = [0.0: "regular_0", 1.0:"regular_1",1.5:"regular_1_half", 2.0 : "regular_2", 2.5: "regular_2_half", 3.0: "regular_3",3.5:"regular_3_half", 4.0:"regular_4", 4.5 :"regular_4_half", 5.0:"regular_5"]
 
     func getData() {
+        
         API.fetchBusinesses { result in
             switch result {
             case .success(let businesses):
@@ -58,7 +76,7 @@ class ViewController: UIViewController, UISearchControllerDelegate {
                 break
 
             case .failure(let error):
-                print("there was an error")
+                print("there was an \(error.localizedDescription)")
 //                self.displayError(error, title: "Failed to fetch movies")
 
             }
@@ -67,9 +85,12 @@ class ViewController: UIViewController, UISearchControllerDelegate {
 
     private func updateUI(with businesses: [Business]) {
         DispatchQueue.main.async {
+            
             self.businessArray = businesses
-
+            // Animation would go here
+//            self.stopAnimation()
             self.tableview.reloadData()
+            
         }
     }
     
@@ -82,15 +103,10 @@ class ViewController: UIViewController, UISearchControllerDelegate {
 
             case .failure(let error):
                 print("there was an error", error)
-//                self.displayError(error, title: "Failed to fetch movies")
 
             }
         }
     }
-
-
-
-
 
     func getAPIData() {
         API.getRestaurants { restaurants in
@@ -141,9 +157,7 @@ extension ViewController: UISearchResultsUpdating {
             searchUsing(str: text)
             
         }
-        
-              
-              
+     
     }
    
     
